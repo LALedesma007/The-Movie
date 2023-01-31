@@ -1,0 +1,20 @@
+/*--------------BARRA DE NAVEGACION------------*/
+
+body{
+  background-color: rgb(23, 13, 66);
+}
+.logoInit{
+  border-radius: 50px;
+}
+
+.cardTxt{
+  height: 40px;
+}
+
+.imagen{
+  height: 100%;
+}
+
+.textoNav{
+  font-family: orbitron;
+}

@@ -1,0 +1,98 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  background: url(./imagenes/camaraFondo.png) no-repeat center top;
+  background-size:cover;
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100%;
+}
+      
+.loginBox{
+  width: 320px;
+  height: 540px;
+  background: rgba(218, 10, 21, 0.8);
+  color: white;
+  top: 55%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 20px;
+  border-radius: 10px;
+}
+
+.loginBox .logoInit{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.loginBox h1{
+  padding: 0 0 15px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+.loginBox label{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+.loginBox input{
+  width: 100%;
+  margin-bottom: 20px;
+  
+}
+
+.loginBox input[type="text"],
+.loginBox input[type="password"],
+.loginBox input[type="email"] {
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  outline: none;
+  color: white;
+}
+
+.loginBox input[type="submit"] {
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.loginBox a{
+  text-decoration: none;
+  font-size: inherit;
+  color: grey;
+}
+
+.loginBox a:hover{
+  color: white;
+}
+
+.loginBox .btn{
+  font-family: sans-serif;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.iconEyes{
+  position: absolute;
+  margin: 0px -20px;
+  cursor: pointer;
+}

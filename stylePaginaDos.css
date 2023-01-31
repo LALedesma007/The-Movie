@@ -1,0 +1,55 @@
+body{
+  background-color:  rgb(23, 13, 66);
+}
+.logoInit{
+  border-radius: 50px;
+}
+
+.cardTxt{
+  height: 40px;
+}
+
+.imagen{
+  height: 100%;
+}
+
+.textoInfo{
+  font-family: orbitron;
+}
+
+.texto{
+  color: white;
+}
+.img-fluid{
+  border-radius: 10px;
+  margin: 20px 0px 20px 0px;
+  margin-left: 20px;
+  width: 90%;
+  z-index: 10;
+}
+.puntuacion{
+  display: flex;
+  justify-content: center;
+  display: inline;
+  background-color: rgb(8, 8, 8);
+  color: white;
+  max-width: 10%;
+  padding: 5px;
+  border-radius: 50%;
+  border: 5px solid yellowgreen;
+}
+
+.contenedorCard{
+  max-width: 100%;
+  background-color:transparent;
+}
+
+.fondo{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 70%;
+  z-index: -1;
+}
