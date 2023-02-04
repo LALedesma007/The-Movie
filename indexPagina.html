@@ -17,26 +17,24 @@
 </head>
 <body>
   <header>
+    <!----NAVBAR---->
     <section>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex">
-          <a class="navbar-brand" href="#"><video class="logoInit" src="./imagenes/Black Modern Geometric Gaming Logo.mp4" loop autoplay muted width="70" height="70"></video></a>
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid  d-flex">
+          <a class="navbar-brand" href="#"><video class="logoInit" src="./imagenes/Black Modern Geometric Gaming Logo.mp4" loop autoplay muted width="85" height="85"></video></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav d-flex mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="navbar-brand textoNav active" aria-current="page" href="./indexPaginaDos.html">POPULARES</a>
+                <a class="navbar-brand navbtn textoNav active" aria-current="page" href="./indexPaginaDos.html">POPULARES</a>
               </li>
               <li class="nav-item">
-                <a class="navbar-brand textoNav active" aria-current="page" href="#">Home</a>
+                <a class="navbar-brand navbtn textoNav active" aria-current="page" href="./indexFavorito.html">MIS FAVORITOS</a>
               </li>
               <li class="nav-item">
-                <a class="navbar-brand textoNav active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="navbar-brand textoNav active" aria-current="page" href="#">Home</a>
+                <a class="navbar-brand navbtn textoNav active type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-current="page" href="#">BUSCAR</a>
               </li>
             </ul>
           </div>
@@ -45,12 +43,10 @@
     </section>
   </header>
   <main>
+    <!----OFFCANVAS---->
     <section>
-      <div class="container-fluid">
+      <div class="container-fluid ">
         <div class="row">
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-            THE MOVIE
-          </button>
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
               <a class="navbar-brand" href="#"><video class="logoInit" src="./imagenes/Black Modern Geometric Gaming Logo.mp4" loop autoplay muted width="70" height="70"></video></a>
@@ -61,12 +57,21 @@
               <div>
                 Millones de películas, programas de televisión y personas por descubrir. Explora ahora.
               </div>
-              <form class="d-flex" role="search" id="formulario">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="busqueda">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+              <form class="d-flex mt-3" role="search" id="formulario">
+                <input class="form-control me-2" type="search" placeholder="The Movie" aria-label="Search" id="busqueda">
+                <button class="btn  btn-primary" type="submit">Buscar</button>
               </form>
+              <div class="container-fluid">
+                <div class="row justify-content-center m-2" id="containerCard">
+                </div>
+              </div>
+              <div class="container-fluid">
+                  <div class="row paginacion">
+                    <a href="./indexPagina.html" class="btn btn-primary">Salir</a>
+                  </div>
+              </div>
               <div class="dropdown mt-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                   Genero
                 </button>
                 <ul class="dropdown-menu">
@@ -85,71 +90,78 @@
         </div>
       </div>
     </section>
-    <section>  
-        <div class="carrusel" >
-          <div class="carruselItems" id="carrusel">
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/10/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/11/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/13/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/14/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/15/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/16/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/17/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/18/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/19/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/20/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/21/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/22/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/23/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/24/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/25/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/26/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/27/200/300" alt="">
-            </div>
-            <div class="carruselItem">
-              <img src="https://picsum.photos/id/28/200/300" alt="">
+    <!----CARRUSEL---->
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="carrusel">
+            <div class="carruselItems" id="carrusel">
+              <div class="carruselItem">    
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">    
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
+              <div class="carruselItem">
+                <button type="button" class="btn cardMovies"><img class="imagenesCard" src="#" alt=""></button>
+              </div>
             </div>
           </div>
         </div>
+    </div>
+       <div class="container-fluid">
+        <div class="row justify-content-center m-2" id="containerVideo">
+
+      </div>
+      </div>
     </section>
     <section>
       <div class="container-fluid my-3">
         <div class="row">
-          <video class="col-lg-8" src="./video/the last of us.mp4" type="video/mp4" autoplay muted loop></video> 
-          <div class="col-lg-4">
+          <video class="col-lg-7" src="./video/the last of us.mp4" type="video/mp4" autoplay muted loop></video> 
+          <div class="col-lg-5">
           <h1 class="tituloVideo">THE <br> LAST <br> OF US</h1>
           <h5 class="tituloVideoDos">Drama, Sci-Fi & Fantasy, Action & Adventure</h5>
           <p class="tituloVideoTres">Cuando una pandemia global destruye la civilización, un superviviente se hace cargo de una chica de 14 años que podría ser la última esperanza de la humanidad.</p>
@@ -157,15 +169,11 @@
       </div>
       </div>
     </section>
-    <section>
-      <div class="container-fluid">
-        <div class="row justify-content-center m-2" id="containerCard">
-        </div>
-      </div>
-    </section>
+    
 
   </main>
   <footer>
+ 
   </footer>
   <script src="./appPagina.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

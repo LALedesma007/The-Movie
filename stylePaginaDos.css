@@ -1,6 +1,73 @@
 body{
   background-color:  rgb(23, 13, 66);
 }
+
+
+/*--------------BARRA DE NAVEGACION------------*/
+nav{
+background-color: white;
+}
+
+.logoInit{
+  border-radius: 50px;
+}
+
+.cardTxt{
+  height: 40px;
+}
+
+.imagen{
+  height: 100%;
+}
+
+.textoNav{
+  font-family: orbitron;
+}
+
+.navbtn:hover{
+  box-shadow: 7px 7px 5px 0px rgba(13,110,253,0.46);
+}
+
+/*--------------OFFCANVAS------------*/
+
+.offcanvas{
+  background-color: rgb(23, 13, 66);
+  margin: 0px;
+}
+
+.offcanvas .offcanvas-header{
+  background-color: white;
+  margin: 0px -11px 0px -11px;  
+}
+
+.offcanvas-title{
+  font-family: orbitron;
+  font-weight:bold;
+}
+.offcanvas-body{
+  color: white;
+  padding-bottom: 5px;
+}
+
+.form-control{
+  font-family: orbitron;
+}
+.offcanvas-body::-webkit-scrollbar{
+  background-color:rgb(23, 13, 66);
+width: 7px;
+}
+.offcanvas-body::-webkit-scrollbar-thumb{
+  background-color:#0D6EFD;
+  border-radius: 7px;
+  width: 20px;
+}
+
+/*--------------LAS CARDS------------*/
+
+.card{
+  background: rgb(23, 13, 66);
+}
+
 .logoInit{
   border-radius: 50px;
 }
@@ -53,3 +120,4 @@ body{
   opacity: 70%;
   z-index: -1;
 }
+

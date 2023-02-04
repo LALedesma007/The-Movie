@@ -9,31 +9,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="./imagenes/miniCamara.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  <link rel="stylesheet" href="./stylePaginaDos.css">
+  <link rel="stylesheet" href="./styleFavorito.css">
   <title>Movie Populares</title>
 </head>
 <body>
-  <!--<form class="d-flex" role="search" id="formulario">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="busqueda">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>-->
   <header>
-       <!----NAVBAR---->
-       <section>
+      <!----NAVBAR---->
+      <section>
         <nav class="navbar navbar-expand-lg ">
           <div class="container-fluid  d-flex">
             <a class="navbar-brand" href="/indexPagina.html"><video class="logoInit" src="./imagenes/Black Modern Geometric Gaming Logo.mp4" loop autoplay muted width="85" height="85"></video></a>
-            <h2 class="textoInfo ms-3 ">LAS PELICULAS MAS POPULARES</h2>
+            <h2 class="textoNav ms-3 ">MIS PELICULAS FAVORITAS</h2>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-              <ul class="navbar-nav d-flex mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="navbar-brand navbtn textoNav active" aria-current="page" href="./indexFavorito.html">MIS FAVORITOS</a>
-                </li>
-              </ul>
+             
             </div>
           </div>
         </nav>
@@ -42,14 +33,12 @@
   <main>
     <section>
       <div class="container-fluid">
-        <div class="row justify-content-center m-2" id="containerCard">
+        <div class="row justify-content-center m-2" id="containerCardFavorito">
         </div>
       </div>
       <div class="d-flex justify-content-center m-4">
           <div class="paginacion">
-            <button class="btn btn-primary textoInfo" id="btnAnterior">Anterior</button>
-            <a href="./indexPagina.html" class="btn btn-primary textoInfo">Salir</a>
-            <button class="btn btn-primary textoInfo" id="btnSiguiente">Siguiente</button>
+            <a href="./indexPaginaDos.html" class="btn textoNav btn-primary">Atras</a>
           </div>
       </div>
     </section>
@@ -60,7 +49,7 @@
 
 
   </footer>
-  <script src="./appPaginaDos.js"></script>
+  <script src="./appFavorito.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>

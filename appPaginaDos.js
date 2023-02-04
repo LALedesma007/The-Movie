@@ -33,15 +33,14 @@ return(
   const CreateCard = async() => {
     const cards = document.getElementById("containerCard")
   const data = await getData()
+  localStorage.setItem("dataApi", JSON.stringify(data))
   const card = data.map(info =>
-    `<div class="card m-2 col-sm-12  col-lg-2 p-0 border-0" >
+    `<div class="card  m-2 col-sm-12  col-lg-2 p-0 border-0" >
          <img src="https://image.tmdb.org/t/p/w500/${info.poster_path}" class=" imagen rounded-top" alt="The Movie">
-      <div class="card border-0 mt-1">
-         <div class="card cardTxt border-0 m-1">
-           <h6 class=" fw-bold">${info.title}</h6>
-         </div>
-         <div class="card cardBtn border-0">
-           <a href="#" class="btn btn-warning textoInfo" onclick="informacion(${info.id})" id="info">Más Info</a>
+      <div class="card  border-0">
+         <div class="card  border-0">
+           <a href="#" class="btn btn-primary textoInfo" onclick="informacion(${info.id})" id="info">Más Info</a>
+           <a href="#" class="btn btn-primary mt-2 textoInfo" onclick="addFav(${info.id})">Agregar a Favorito<img src="./imagenes/favorito.png" width="40px" alt=""></a>
          </div>
       </div>
    </div>
@@ -49,49 +48,21 @@ return(
   cards.innerHTML = card
 }
 
-CreateCard() 
+CreateCard()  
+// --------- CREAR CARD FAVORITAS ------------//
+
+const addFav = (id) => {
+  const data = JSON.parse(localStorage.getItem("dataApi"))
+  let exiteFavorito = JSON.parse(localStorage.getItem("miFav")) || []
 
 
-// --------- BUSQUEDA DE LAS PELICULAS  ------------//
+  let fav = data.find(info => info.id == id)
+  exiteFavorito.push(fav)
+  localStorage.setItem("miFav", JSON.stringify(exiteFavorito))
+ 
+}
 
-const form = document.getElementById("formulario")
-const search = document.getElementById("busqueda")
 
-const buscar = (e) => {
-  
-  e.preventDefault();
-  const mostrar = search.value
-  const databuscar = async () => {
-    return (
-      await fetch(`https://api.themoviedb.org/3/search/movie?api_key=50db356830835cf004f77701bdcff3e5&query=${mostrar}&language=en-US&page=1&include_adult=false`)
-        .then(Response => Response.json())
-        .then(json => json.results)
-    )
-  }
-
-  const crearCard = async() => {
-    const cards = document.getElementById("containerCard")
-    const data = await databuscar()
-  
-    const popular = data.map(info => 
-    `<div class="card m-2 col-sm-12  col-lg-2 p-0 border-0" >
-          <img src="https://image.tmdb.org/t/p/original/${info.poster_path}" class=" imagen rounded-top" alt="The Movie">
-       <div class="card border-0 mt-1">
-          <div class="card cardTxt border-0 m-1">
-            <h6 class="fw-bold">${info.title}</h6>
-          </div>
-          <div class="card cardBtn border-0">
-            <a href="#" class="btn btn-warning textoInfo" id="info">Hola</a>
-          </div>
-       </div>
-    </div>
-  `);
-  cards.innerHTML = popular
-  }
- crearCard() 
-}  
-  
-form.addEventListener("submit", buscar) 
 
 // --------- Obtenga las reseñas de los usuarios para una película. ------------//
 

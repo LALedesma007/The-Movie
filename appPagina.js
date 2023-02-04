@@ -1,30 +1,4 @@
-// --------CONTROL DE MOVIMIENTO DEL CARRUSEL---------//
 
-const carrusel = document.querySelector(".carruselItems")
- 
-let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth // Esta resta da el scroll maximo que llega
-let intervalo = null
-let step = 1 // El numero del Step Controla la velocidad del carrusel  
-
-const start = () => {
-intervalo = setInterval(function(){
-carrusel.scrollLeft += step
-if (carrusel.scrollLeft === maxScrollLeft) {
-  step = -1 // cuando el maxScrollLeft llega al final el step se vuelve negativo y el carrusel regresa
-}else if (carrusel.scrollLeft === 0) {
-  step = 1
-}
-},10);
-}
-
-
-const stop = () =>{
-clearInterval(intervalo)
-}
-
-carrusel.addEventListener('mouseover', stop)
-carrusel.addEventListener("mouseout", start)
-start();
 
 // --------CARRUSEL---------//
 
@@ -35,20 +9,45 @@ const getDataCarrusel = async () => {
       .then(json => json.results)
     )
   } 
-    const createCardCarrusel = async() => {
+  const createCardCarrusel = async() => {
+  
     const cards = document.getElementById("carrusel")
     const data = await getDataCarrusel()
     const card = data.map(info =>
-      ` <div class="carruselItem">
-      <img src="https://image.tmdb.org/t/p/w500/${info.poster_path}" alt="">
-    </div>
-   `);
-   
+      `<div class="carruselItem">
+       <button type="button"  onclick="cardsMovies(${info.id})" class="btn cardMovies" ><img class="imagenesCard" src="https://image.tmdb.org/t/p/w500/${info.poster_path}" alt=""  data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+     </div>`);
     cards.innerHTML = card
   }
-  
-  createCardCarrusel() 
+  createCardCarrusel()
 
+//----------------------------------------------------//
+
+const cardsMovies = async (id) => {
+    
+  const cardMovie = document.getElementById("containerVideo")
+      const videos = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=50db356830835cf004f77701bdcff3e5&language=en-US`)
+      .then(Response => Response.json())
+      .then(json =>json.results) 
+      let movieCard = videos[0];
+  cardMovie.innerHTML =    
+  `  <div class="modal fade" id="staticBackdrop"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" id="botonCerrar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+               <iframe id="myVideo" width="500" height="300" src="https://www.youtube.com/embed/${movieCard.key}" ></iframe>
+            </div>
+        </div>
+     </div>`
+ const vmodal = document.getElementById("botonCerrar")
+ const video = document.getElementById("myVideo")
+
+  vmodal.addEventListener('click', () => {      
+  video.remove();
+ })
+} 
 
 
 // --------- BUSQUEDA DE LAS PELICULAS  ------------//
@@ -73,16 +72,9 @@ const buscar = (e) => {
     const data = await databuscar()
   
     const popular = data.map(info => 
-    `<div class="card m-2 col-sm-12  col-lg-2 p-0 border-0" >
+    `<div class="card m-2 col-12 p-0 border-0" >
           <img src="https://image.tmdb.org/t/p/original/${info.poster_path}" class=" imagen rounded-top" alt="The Movie">
-       <div class="card border-0 mt-1">
-          <div class="card cardTxt border-0 m-1">
-            <h6 class="fw-bold">${info.title}</h6>
-          </div>
-          <div class="card cardBtn border-0">
-            <a href="#" class="btn btn-warning textoInfo" id="info">Hola</a>
-          </div>
-       </div>
+      
     </div>
   `);
   cards.innerHTML = popular
@@ -92,13 +84,3 @@ const buscar = (e) => {
   
 form.addEventListener("submit", buscar) 
 
-//---------GENERO-----------//
-
-const getDataGenero = async() =>{
-  return(
-   await fetch (`https://api.themoviedb.org/3/genre/movie/list?api_key=50db356830835cf004f77701bdcff3e5&language=en-US`)
-    .then(Response => Response.json())
-    .then(json =>console.log(json.genres))
-  )  
-}
-getDataGenero()

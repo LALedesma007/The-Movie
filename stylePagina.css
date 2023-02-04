@@ -1,8 +1,14 @@
-/*--------------BARRA DE NAVEGACION------------*/
-
 body{
   background-color: rgb(23, 13, 66);
 }
+
+
+
+/*--------------BARRA DE NAVEGACION------------*/
+nav{
+background-color: white;
+}
+
 .logoInit{
   border-radius: 50px;
 }
@@ -19,40 +25,102 @@ body{
   font-family: orbitron;
 }
 
+.navbtn:hover{
+  box-shadow: 7px 7px 5px 0px rgba(13,110,253,0.46);
+}
+
+/*--------------OFFCANVAS------------*/
+
+.offcanvas{
+  background-color: rgb(23, 13, 66);
+  margin: 0px;
+}
+
+.offcanvas .offcanvas-header{
+  background-color: white;
+  margin: 0px -11px 0px -11px;  
+}
+
+.offcanvas-title{
+  font-family: orbitron;
+  font-weight:bold;
+}
+.offcanvas-body{
+  color: white;
+  padding-bottom: 5px;
+}
+
+.form-control{
+  font-family: orbitron;
+}
+.offcanvas-body::-webkit-scrollbar{
+  background-color:rgb(23, 13, 66);
+ width: 7px;
+}
+.offcanvas-body::-webkit-scrollbar-thumb{
+  background-color:#0D6EFD;
+  border-radius: 7px;
+  width: 20px;
+}
 /*--------------CARRUSEL------------*/
 
-body{
-  margin: 0;
-}
+
 .carrusel{
-  margin-top: 30px;
+  display: flex;
+  margin-top: 5px;
+
+  
 }
 
 .carruselItems{
   display: flex;
-  overflow-x:hidden;
+  overflow-x:scroll;
   overflow-y:hidden;
-  
-  padding: 30px 0px ;
+  padding-bottom: 30px;
+  padding-top: 35px;
 }
 
-.carruselItem{
-  min-width:200px;
-  max-width: 300px;
+.carruselItem .cardMovies{
+  min-width: 200px;
+  max-width: 10px;
   height: 300px;
-  margin: 0px 5px 0px 5px;
+  
 }
 
-.carruselItem img{
+.carruselItem .cardMovies .imagenesCard{
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 7px;
   
-  object-fit: cover;
 }
 
 .carruselItem:hover{
   transform: scale(1.2);
+}
+
+.carrusel .carruselItems::-webkit-scrollbar{
+  background-color:rgb(23, 13, 66);
+ 
+}
+.carrusel .carruselItems::-webkit-scrollbar-thumb{
+  background-color:#0D6EFD;
+  border-radius: 7px;
+}
+
+.carrusel .carruselItems::-webkit-scrollbar-thumb:hover{
+  background-color:white;
+  border-radius: 7px;
+}
+
+/*---------------MODAL-------------------*/
+
+.modal-header{
+  display: inline-block;
+  background-color: black;
+}
+
+.btn-close{
+ background-color: white;
 }
 
 /*--------------VIDEO PORTADA------------*/
