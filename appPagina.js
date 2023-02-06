@@ -1,5 +1,4 @@
 
-
 // --------CARRUSEL---------//
 
 const getDataCarrusel = async () => {
@@ -84,3 +83,16 @@ const buscar = (e) => {
   
 form.addEventListener("submit", buscar) 
 
+// --------- CERRAR SECCION  ------------//
+if (!localStorage.getItem("userlog")) {
+  window.location="./indexLogin.html"
+}
+
+const cerrarSeccion = document.getElementById("cerrar")
+
+const salirSeccion = () =>{
+  localStorage.removeItem("userlog")
+  window.location = "./indexLogin.html"
+}
+
+cerrarSeccion.addEventListener("click", salirSeccion)

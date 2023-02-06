@@ -8,17 +8,21 @@ const loginUsuario = (e) => {
 
   const getLocal = localStorage.getItem("user");
   const validarUser = JSON.parse(getLocal);
-console.log(validarUser);
-  if (!validarUser.find(user => user.usuarios === usuario.value)) {
+
+if (validarUser === null) {
+      alert("No hay usuarios registrados")
+}else if (usuario.value === "" || contraseña.value === "" ) {
+  alert('Hay campos vacios') 
+}else if (!validarUser.find(user => user.usuarios === usuario.value)) {
       alert("El usuario no existe")
-    }else if (validarUser.find(user => user.usuarios === usuario.value).contraseñas !== contraseña.value) {
+}else if (validarUser.find(user => user.usuarios === usuario.value).contraseñas !== contraseña.value) {
       alert("La contraseña no coincide")
-    }else{
+}else{
+      localStorage.setItem("userlog", JSON.stringify("user"))
       alert("Usuario logueado con exito")
       window.location.href="/indexPagina.html";
     }
-  }
+}
     
 
-// Eventos
 formulario.addEventListener("submit", loginUsuario)
